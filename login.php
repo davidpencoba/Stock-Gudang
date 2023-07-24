@@ -11,11 +11,21 @@ if(isset($_POST['login'])) {
     $hitung = mysqli_num_rows($cekdatabase);
 
     if($hitung>0) {
+        $_SESSION['log'] = 'true';
         header('location:index.php');
     } else {
-        echo 'Data Tidak ada';
+        header('location:login.php');
     };
     };
+
+    // jika sudah login
+    if(!isset($_SESSION['log'])) {
+     } else {
+        header('location: index.php');
+     }
+
+
+
 ?>
 
 
